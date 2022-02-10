@@ -20,4 +20,9 @@ public class ForumController {
     public void createPost(Post createdPost) {
         Posts.add(createdPost);
     }
+
+    @PostMapping("/deleteAllPosts")
+    public void deleteAllPosts() {
+        Posts.clear();
+    }
 }

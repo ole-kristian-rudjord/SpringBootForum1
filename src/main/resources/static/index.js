@@ -2,7 +2,6 @@ $(() => {
     showPosts();
 })
 
-
 function showPosts() {
     $.get("getPosts", function (postsArray) {
         let out = '<h1>Posts</h1>';
@@ -13,6 +12,12 @@ function showPosts() {
                     `<div>${post.content}</div>` +
                 `</div>`;
         }
-        $('#posts-div').append(out);
+        $('#posts-div').html(out);
+    });
+}
+
+function deleteAllPosts() {
+    $.post("deleteAllPosts", function () {
+        showPosts();
     });
 }
